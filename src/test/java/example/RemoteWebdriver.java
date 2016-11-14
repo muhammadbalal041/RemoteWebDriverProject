@@ -41,7 +41,7 @@ public class RemoteWebdriver {
 //		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
 //		driver = new FirefoxDriver(firefoxBinary, null); 
 		
-		//System.setProperty("webdriver.chrome.driver", "chromedriver");
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
 //		driver=new ChromeDriver();
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("platform", "LINUX");
