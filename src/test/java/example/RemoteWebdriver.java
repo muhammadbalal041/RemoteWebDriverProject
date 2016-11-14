@@ -45,7 +45,7 @@ public class RemoteWebdriver {
 //		driver=new ChromeDriver();
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("platform", "LINUX");
-		caps.setCapability("version", "54");
+		//caps.setCapability("version", "54");
 		caps.setCapability("browserName", "chrome");
 		driver = new RemoteWebDriver(new URL(URL), caps);
 
@@ -91,7 +91,7 @@ public class RemoteWebdriver {
             //SELECT A RANDOM PRODUCT
             List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
             System.out.println("print the allProducts "+allProducts);
-            System.out.println("print the allProducts.size() "+allProducts.size());
+           // System.out.println("print the allProducts.size() "+allProducts.size());
             Random random2 = new Random();
             WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
             randomProduct.click();
