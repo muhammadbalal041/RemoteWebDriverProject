@@ -95,6 +95,7 @@ public class RemoteWebdriver {
             Random random2 = new Random();
             WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
             randomProduct.click();
+            System.out.println("Random product is clicked");
 
 
             if(!(temp.equals("ACCESSORIES")||temp.equals("BT LAWN '16")))
