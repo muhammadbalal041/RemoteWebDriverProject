@@ -97,7 +97,6 @@ public class RemoteWebdriver {
             randomProduct.click();
             System.out.println("Random product is clicked");
 
-
             if(!(temp.equals("ACCESSORIES")||temp.equals("BT LAWN '16")))
             {
                 //RANDOMLY SELECT THE SIZE
