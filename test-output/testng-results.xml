@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="46658" started-at="2016-11-14T13:35:44Z" finished-at="2016-11-14T13:36:31Z">
+  <suite name="Default suite" duration-ms="38950" started-at="2016-11-15T10:13:20Z" finished-at="2016-11-15T10:13:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="46658" started-at="2016-11-14T13:35:44Z" finished-at="2016-11-14T13:36:31Z">
+    <test name="Default test" duration-ms="38950" started-at="2016-11-15T10:13:20Z" finished-at="2016-11-15T10:13:59Z">
       <class name="example.RemoteWebdriver">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:example.RemoteWebdriver@25bbe1b6]" name="beforeTest" is-config="true" duration-ms="7141" started-at="2016-11-14T18:35:44Z" finished-at="2016-11-14T18:35:51Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:example.RemoteWebdriver@3159c4b8]" name="beforeTest" is-config="true" duration-ms="3729" started-at="2016-11-15T15:13:20Z" finished-at="2016-11-15T15:13:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beechtree()[pri:0, instance:example.RemoteWebdriver@25bbe1b6]" name="beechtree" duration-ms="38845" started-at="2016-11-14T18:35:51Z" finished-at="2016-11-14T18:36:30Z">
+        <test-method status="PASS" signature="BeechTree()[pri:0, instance:example.RemoteWebdriver@3159c4b8]" name="BeechTree" duration-ms="35136" started-at="2016-11-15T15:13:24Z" finished-at="2016-11-15T15:13:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beechtree -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:example.RemoteWebdriver@25bbe1b6]" name="afterTest" is-config="true" duration-ms="637" started-at="2016-11-14T18:36:30Z" finished-at="2016-11-14T18:36:31Z">
+        </test-method> <!-- BeechTree -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:example.RemoteWebdriver@3159c4b8]" name="afterTest" is-config="true" duration-ms="70" started-at="2016-11-15T15:13:59Z" finished-at="2016-11-15T15:13:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
