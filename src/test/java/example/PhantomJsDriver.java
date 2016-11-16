@@ -198,14 +198,15 @@ public class PhantomJsDriver {
 
 		System.out.println("Phone number is Enterd");
 
-		WebDriverWait waitTel2 = new WebDriverWait(driver, 50);
-		waitTel2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
-
-		WebElement ConfirmMobileNumber = driver.findElement(By.xpath("//*[@id='tel2']"));
-
-		ConfirmMobileNumber.sendKeys("03001234567");
-		System.out.println("Phone number is confirmed");
-
+//		WebDriverWait waitTel2 = new WebDriverWait(driver, 50);
+//		waitTel2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
+//
+//		WebElement ConfirmMobileNumber = driver.findElement(By.xpath("//*[@id='tel2']"));
+//
+//		ConfirmMobileNumber.sendKeys("03001234567");
+//		System.out.println("Phone number is confirmed");
+		
+		//Check Box Element
 		//driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/ul/li/input")).click();
 		//driver.findElement(By.xpath("//input[contains(@title,'Ship to this address')]")).click();
 		//driver.findElement(By.id("shipping:same_as_billing")).click();
@@ -217,8 +218,8 @@ public class PhantomJsDriver {
 		//driver.findElement(By.xpath("//input[contains(@title,'Ship to this address')]")).click();
 		//driver.findElement(By.linkText("Ship to this address")).click();
 
+		
 		//FILL IN THE Shipping INFORMATION
-
 		WebDriverWait waitFirstNam=new WebDriverWait(driver,50);
 		waitFirstNam.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping:firstname']"))).sendKeys("tests");
 
@@ -260,9 +261,9 @@ public class PhantomJsDriver {
 
 		System.out.println("Shipping Phone number is Enterd");
 
-		WebDriverWait waitTel2s = new WebDriverWait(driver, 50);
-		waitTel2s.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/div[3]/div[2]/div/div[8]/div[3]/div/input"))).sendKeys("03001231231");
-		System.out.println("Shipping Phone number is confirmed");
+//		WebDriverWait waitTel2s = new WebDriverWait(driver, 50);
+//		waitTel2s.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/div[3]/div[2]/div/div[8]/div[3]/div/input"))).sendKeys("03001231231");
+//		System.out.println("Shipping Phone number is confirmed");
 
 		//*[@id="shipping:same_as_billing"]
 		//		if ( !driver.findElement(By.xpath("//*[@id='shipping:same_as_billing']")).isSelected() )
