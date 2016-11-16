@@ -278,7 +278,7 @@ public class PhantomJsDriver {
 		WebDriverWait wait3 = new WebDriverWait(driver, 100);
 		wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='review-buttons-container']/button")));
 		driver.findElement(By.xpath("//*[@id='review-buttons-container']/button")).click();
-		driver.findElement(By.xpath("//*[@id='review-buttons-container']/button")).click();
+		//driver.findElement(By.xpath("//*[@id='review-buttons-container']/button")).click();
 
 		System.out.println("Place Order Now Button is clicked");
 
