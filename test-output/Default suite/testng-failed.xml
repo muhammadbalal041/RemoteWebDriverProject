@@ -5,9 +5,7 @@
     <classes>
       <class name="example.PhantomJsDriver">
         <methods>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
-          <include name="LeisureClub"/>
+          <include name="LLeisupreClub"/>
         </methods>
       </class> <!-- example.PhantomJsDriver -->
     </classes>

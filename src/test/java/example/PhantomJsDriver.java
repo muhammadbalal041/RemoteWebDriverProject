@@ -3,6 +3,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -27,7 +28,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
 
 public class PhantomJsDriver {
-	
+
 	WebDriver driver;
 	boolean outOfStock = false;
 	public static final String KEY = "1aa8518808db386059c92274ed4466c2";
@@ -36,24 +37,7 @@ public class PhantomJsDriver {
 
 	@BeforeTest
 	public void beforeTest() throws MalformedURLException {	
-		
-		//Firefox Driver
-//		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
-//		System.setProperty("firefox.gecko.driver", "geckodriver");
-//		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
-//		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
-//		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
-//		driver = new FirefoxDriver(firefoxBinary, null); 
-		
-		//chrome remote Driver
-		//System.setProperty("webdriver.chrome.driver", "chromedriver");
-		//driver=new ChromeDriver();
-//		DesiredCapabilities caps = new DesiredCapabilities();
-//		caps.setCapability("platform", "LINUX");
-//		//caps.setCapability("version", "54");
-//		caps.setCapability("browserName", "chrome");
-//		driver = new RemoteWebDriver(new URL(URL), caps);
-		
+
 		//PhantomJs Driver
 		System.setProperty("phantomjs.binary.path", "phantomjs");
 		String[] cli_args = new String[]{ "--ignore-ssl-errors=true" };
@@ -67,158 +51,241 @@ public class PhantomJsDriver {
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); 
 	}
-	
+
 	@AfterTest
 	public void afterTest(){
-	
+
 		driver.quit();
 
 	}
-	
 	@Test				
-	public void LeisureClub() {
+	public void HouseOfIthad() {
 
 		Logger logger = Logger.getLogger("");
 		logger.setLevel(Level.OFF);
 
 		//OPEN BEACHTREE WEBSITE
-		driver.get("http://www.leisureclub.pk/");
+		driver.get("http://www.houseofittehad.com/");
 		//driver.get("http://www.beechtree.pk");
 
+		driver.findElement(By.xpath("html/body/div/div[1]/div[2]/div/div[1]/span")).click();
 		System.out.println("Page title is: " + driver.getTitle());
 
-		driver.findElement(By.xpath("html/body/div[1]/div/div[3]/div/div[1]/span")).click();
-		//driver.findElement(By.cssSelector("span.close")).click();
+		List<String> brandNames = Arrays.asList("ROYAL EMBROIDERED SHAWLS", "GERMAN KHADDER", "GERMAN LINEN", "ROYAL EMBROIDERED");
 
-		List<WebElement> allCategories = driver.findElements(By.cssSelector("div.landing-content"));
-		Random random1 = new Random();
-		WebElement randomCategory = allCategories.get(random1.nextInt(allCategories.size()));
+		Random randomCategories = new Random();
+		String randomSize = brandNames.get(randomCategories.nextInt(brandNames.size()));
+		driver.findElement(By.linkText(randomSize)).click();
+		System.out.println("Randomly selected label is : " + randomSize);
 
-		String temp = randomCategory.getText(); 
-		System.out.println("print the selected Category "+temp);
-		randomCategory.click();
-
-		//SELECT A RANDOM PRODUCT
-		List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
-		System.out.println("Print the allProducts "+allProducts);
-		System.out.println("print the allProducts.size() "+allProducts.size());
-		Random random2 = new Random();
-		WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
-		System.out.println("Random product is "+randomProduct);
-
-		// WebElement element = driver.findElement(By("element_path"));
-
-		Actions actions = new Actions(driver);
-
-		actions.moveToElement(randomProduct).click().perform();
-
-		//WebDriverWait waitForProduct = new WebDriverWait(driver, 100);
-		//waitForProduct.until(ExpectedConditions.visibilityOf(randomProduct));
-		//randomProduct.click();
-		System.out.println("Random product is clicked");
-
-		//WebDriverWait waitSwatch = new WebDriverWait(driver, 50);
-		//waitSwatch.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='showChart']/span")));
-		//*[@id="product-options-wrapper"]/dl[1]/dt/label/text()
-
-		List<WebElement> allsizes = driver.findElements(By.cssSelector("span[class='swatch']"));
-		System.out.println("allsizes is "+allsizes);
-		Random random3 = new Random();
-		WebElement randomSize = allsizes.get(random3.nextInt(allsizes.size()));
-		if(!allsizes.isEmpty())//if the size is availabe,click/select it
+		if(randomSize==brandNames.get(0))
 		{
-			randomSize.click();
-			System.out.println("Random size is clicked");
+			System.out.println("Page title is: " + driver.getTitle());
+			//SELECT A RANDOM PRODUCT
+			List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
+			Random random2 = new Random();
+			WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
+			System.out.println("print the selected product "+randomProduct);
+			randomProduct.click();
+
+			WebDriverWait waitProduct = new WebDriverWait(driver, 100);
+			waitProduct.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")));
+			driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")).click();
+
+			WebDriverWait waitCheckOut=new WebDriverWait(driver,50);
+			waitCheckOut.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='header-cart']/div[3]/div[3]/div/a[1]/span"))).click();
+
+
 		}
-		else//if the sizes are not available, print on console that the product is out of stock
+		else if(randomSize==brandNames.get(1))
 		{
-			System.out.println("the item selected is out of stock");
-			outOfStock = true;
+			System.out.println("Page title is: " + driver.getTitle());
+			//SELECT A RANDOM PRODUCT
+			List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
+			Random random2 = new Random();
+			WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
+			System.out.println("print the selected product "+randomProduct);
+			randomProduct.click();
+
+			WebDriverWait waitProduct = new WebDriverWait(driver, 100);
+			waitProduct.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")));
+			driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")).click();
+
+			WebDriverWait waitCheckOut=new WebDriverWait(driver,50);
+			waitCheckOut.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='header-cart']/div[3]/div[3]/div/a[1]/span"))).click();
+
 		}
-		//SELECT QUANTITY = 1
-		//Select oSelect = new Select(driver.findElement(By.xpath("//*[@id='qty']")));
-		//oSelect.selectByVisibleText("1");
+		else if(randomSize==brandNames.get(2))
+		{		
+			//SELECT A RANDOM PRODUCT
+			List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
+			Random random2 = new Random();
+			WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
+			System.out.println("print the selected product "+randomProduct);
+			randomProduct.click();
 
-		//ADD TO CART
-		//*[@id="product_addtocart_form"]/div[4]/div[5]/div[3]/button/span/span
-		WebElement addCart=driver.findElement(By.xpath("//*[@id='product_addtocart_form']/div[4]/div[5]/div[3]/button/span/span"));
-		addCart.click();
-		System.out.println("add to Cart button is clicked");
+			WebDriverWait waitProduct = new WebDriverWait(driver, 100);
+			waitProduct.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")));
+			driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")).click();
 
-		//CHECKOUT
-		WebDriverWait wait = new WebDriverWait(driver, 100);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='header-cart']/div[3]/div[3]/div/a")));
-		WebElement CheckOut = driver.findElement(By.xpath("//*[@id='header-cart']/div[3]/div[3]/div/a"));
-		if(!(CheckOut.isDisplayed()&& CheckOut.isEnabled()))
-		{
-			if(!CheckOut.isDisplayed())
-			{
-				System.out.println("CHECKOUT button is not displayed on the webpage");
-			}
-			if(!CheckOut.isEnabled())
-			{
-				System.out.println("CHECKOUT button is disabled on webpage");
-			}
+			WebDriverWait waitCheckOut=new WebDriverWait(driver,50);
+			waitCheckOut.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='header-cart']/div[3]/div[3]/div/a[1]/span"))).click();
+
 		}
-		else
+		else if(randomSize==brandNames.get(3))
 		{
-			CheckOut.click();
-			System.out.println("Checkout Button is clicked");
+			System.out.println("Page title is: " + driver.getTitle());
+			//SELECT A RANDOM PRODUCT
+			List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
+			Random random2 = new Random();
+			WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
+			System.out.println("print the selected product "+randomProduct);
+			randomProduct.click();
 
-			//FILL IN THE BILLING INFORMATION
-			driver.findElement(By.xpath("//*[@id='billing:firstname']")).sendKeys("test");
-			System.out.println("First Name is Enterd");
-			driver.findElement(By.xpath("//*[@id='billing:lastname']")).sendKeys("test");
-			System.out.println("Last Name is Enterd");
-			//*[@id="billing:email"]
-			driver.findElement(By.xpath("//*[@id='billing:email']")).sendKeys("test@shopistan.pk");
-			System.out.println("Email is Enterd");
-			//*[@id="billing:confirm_email"]
-			driver.findElement(By.xpath("//*[@id='billing:confirm_email']")).sendKeys("test@shopistan.pk");
-			System.out.println("Email is confirmed");
-			//*[@id="billing:street1"]
-			driver.findElement(By.xpath("//*[@id='billing:street1']")).sendKeys("test");
-			System.out.println("Street 1 is Enterd");
-			//*[@id="billing:street2"]
-			driver.findElement(By.xpath("//*[@id='billing:street2']")).sendKeys("test");
-			System.out.println("Street2 is Enterd");
-			driver.findElement(By.xpath("//*[@id='billing:postcode']")).sendKeys("test");
-			System.out.println("Billing postcode is Enterd");
+			WebDriverWait waitProduct = new WebDriverWait(driver, 100);
+			waitProduct.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")));
+			driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div[2]/div[2]/div[1]/form/div[3]/div[5]/div/div/div/div[2]/button")).click();
 
-			//*[@id="billing:country_id"]
-			//Select oSelect2 = new Select(driver.findElement(By.xpath("//*[@id='billing:country_id']")));
-			//oSelect2.selectByVisibleText("PAKISTAN");
+			WebDriverWait waitCheckOut=new WebDriverWait(driver,50);
+			waitCheckOut.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='header-cart']/div[3]/div[3]/div/a[1]/span"))).click();
 
-			//*[@id="billing:city"]
-			//Select oSelect3 = new Select(driver.findElement(By.xpath("html/body/div[1]/div/div[5]/div/div/div[1]/div[5]/form[1]/div/ul/li[1]/fieldset/ul/li[7]/div[1]/div[1]/div/select")));
-			//Select oSelect3 = new Select(driver.findElement(By.name("billing[city]")));
-			//Select oSelect3 = new Select(driver.findElement(By.xpath("//*[@id='billing:city']")));
-			//oSelect3.selectByIndex(1);
-
-			driver.findElement(By.xpath("//*[@id='billing:city']")).sendKeys("Texas");;
-			System.out.println("City is Enterd");
-
-			//*[@id="billing:region_id"]
-			Select oSelect3 = new Select(driver.findElement(By.xpath("//*[@id='billing:region_id']")));
-			oSelect3.selectByIndex(1);
-			//*[@id="billing:telephone"]
-			driver.findElement(By.xpath("//*[@id='billing:telephone']")).sendKeys("03001234567");
-			System.out.println("Telephone is Enterd");
-			//*[@id="tel2"]
-			//driver.findElement(By.xpath("//*[@id='tel2']")).sendKeys("03001234567");
-
-
-
-			//SELECT CASH ON DELEIVERY
-			//driver.findElement(By.id("p_method_cashondelivery")).click();
-
-			//PLACE ORDER
-			WebDriverWait wait3 = new WebDriverWait(driver, 200);
-			wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='review-buttons-container']/button")));
-			driver.findElement(By.xpath("//*[@id='review-buttons-container']/button")).click();
-			System.out.println("Place Order Now Button is Clicked");
 		}
 
+		//FILL IN THE BILLING INFORMATION
+
+		WebDriverWait waitFirstName=new WebDriverWait(driver,50);
+		waitFirstName.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:firstname']"))).sendKeys("test");
+
+		System.out.println("FirstName is Enterd");
+
+		WebDriverWait waitLastName=new WebDriverWait(driver,50);
+		waitLastName.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:lastname']"))).sendKeys("test");
+		System.out.println("LastName is Enterd");
+
+		WebDriverWait waitEmail = new WebDriverWait(driver, 50);
+		waitEmail.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='bill_form']/div[3]/div[1]/input"))).sendKeys("test@gmail.com");
+		System.out.println("Email is Enterd");
+
+		WebDriverWait waitConfirmEmail = new WebDriverWait(driver, 50);
+		waitConfirmEmail.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:confirm_email']"))).sendKeys("test@gmail.com");
+		System.out.println("Email is Confirmed");
+
+		WebDriverWait waitAddress = new WebDriverWait(driver, 50);
+		waitAddress.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:street1']"))).sendKeys("test");
+
+		System.out.println("Street is Enterd");
+
+		WebDriverWait waitAddress2 = new WebDriverWait(driver, 50);
+		waitAddress2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:street2']"))).sendKeys("test");
+
+		System.out.println("Street2 is Enterd");
+
+		Select oSelect2 = new Select(driver.findElement(By.xpath("//*[@id='billing:country_id']")));
+		oSelect2.selectByVisibleText("Pakistan");
+		System.out.println("Country is selected");
+
+		Select oSelect3 = new Select(driver.findElement(By.xpath("//*[@id='billing:city']")));
+		oSelect3.selectByIndex(3);
+		System.out.println("City is Enterd");
+
+		WebDriverWait waitZipCode = new WebDriverWait(driver, 50);
+		waitZipCode.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:postcode']"))).sendKeys("test");
+
+		System.out.println("ZipCode is Enterd");
+
+		WebDriverWait waitPhoneNumber = new WebDriverWait(driver, 50);
+		waitPhoneNumber.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:telephone']"))).sendKeys("03001234567");
+
+		System.out.println("Phone number is Enterd");
+
+		WebDriverWait waitTel2 = new WebDriverWait(driver, 50);
+		waitTel2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
+
+		WebElement ConfirmMobileNumber = driver.findElement(By.xpath("//*[@id='tel2']"));
+
+		ConfirmMobileNumber.sendKeys("03001234567");
+		System.out.println("Phone number is confirmed");
+
+		//driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/ul/li/input")).click();
+		//driver.findElement(By.xpath("//input[contains(@title,'Ship to this address')]")).click();
+		//driver.findElement(By.id("shipping:same_as_billing")).click();
+
+		//WebElement checkbox= driver.findElement(By.name("shipping[same_as_billing]"));
+		//checkbox.click();
+
+		//driver.findElement(By.xpath("//input[@onclick='shipping.setSameAsBilling(this.checked)']")).click();
+		//driver.findElement(By.xpath("//input[contains(@title,'Ship to this address')]")).click();
+		//driver.findElement(By.linkText("Ship to this address")).click();
+
+		//FILL IN THE Shipping INFORMATION
+
+		WebDriverWait waitFirstNam=new WebDriverWait(driver,50);
+		waitFirstNam.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping:firstname']"))).sendKeys("tests");
+
+		System.out.println("Shipping FirstName is Enterd");
+
+		WebDriverWait waitLastNam=new WebDriverWait(driver,50);
+		waitLastNam.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping:lastname']"))).sendKeys("tests");
+		System.out.println("Shipping LastName is Enterd");
+
+		WebDriverWait waitAddresss = new WebDriverWait(driver, 50);
+		waitAddresss.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping:street1']"))).sendKeys("tests");
+
+		System.out.println("Shipping Street is Enterd");
+
+		WebDriverWait waitAddresss2 = new WebDriverWait(driver, 50);
+		waitAddresss2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping:street2']"))).sendKeys("tests");
+
+		System.out.println("Shipping Street2 is Enterd");
+
+		Select oSelectp = new Select(driver.findElement(By.xpath("//*[@id='shipping:country_id']")));
+		oSelectp.selectByVisibleText("Pakistan");
+		System.out.println("Shipping Country is selected");
+
+		Select oSelectc = new Select(driver.findElement(By.xpath("//*[@id='shipping:city']")));
+		oSelectc.selectByIndex(3);
+		System.out.println("Shipping City is Enterd");
+
+		WebDriverWait waitRegions=new WebDriverWait(driver,50);
+		waitRegions.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping:region']"))).sendKeys("tests");
+		System.out.println("Shipping Region is Enterd");
+
+		WebDriverWait waitZipCodes = new WebDriverWait(driver, 50);
+		waitZipCodes.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/div[3]/div[2]/div/div[8]/div[1]/div/input"))).sendKeys("tests");
+
+		System.out.println("Shipping ZipCode is Enterd");
+
+		WebDriverWait waitPhoneNumbers = new WebDriverWait(driver, 50);
+		waitPhoneNumbers.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/div[3]/div[2]/div/div[8]/div[2]/div/input"))).sendKeys("03001231231");
+
+		System.out.println("Shipping Phone number is Enterd");
+
+		WebDriverWait waitTel2s = new WebDriverWait(driver, 50);
+		waitTel2s.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/div[3]/div[2]/div/div[8]/div[3]/div/input"))).sendKeys("03001231231");
+		System.out.println("Shipping Phone number is confirmed");
+
+		//*[@id="shipping:same_as_billing"]
+		//		if ( !driver.findElement(By.xpath("//*[@id='shipping:same_as_billing']")).isSelected() )
+		//		{
+		//
+		//			System.out.println("Shipping to same Address");
+		//		}
+
+		//html/body/div[1]/div[3]/div/div/div[2]/div[3]/form/div/div[1]/div[2]/ul/li/input
+
+		//PLACE ORDER
+		WebDriverWait wait3 = new WebDriverWait(driver, 100);
+		wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='review-buttons-container']/button")));
+		driver.findElement(By.xpath("//*[@id='review-buttons-container']/button")).click();
+		driver.findElement(By.xpath("//*[@id='review-buttons-container']/button")).click();
+
+		System.out.println("Place Order Now Button is clicked");
+
+		//CLOSE THE BROWSER
+		//		WebDriverWait waitForOrder = new WebDriverWait(driver, 200);
+		//		waitForOrder.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='resend_btn']")));
+		//		System.out.println("Order is successfully is placed");
+		//		System.out.println("Title of the page is After Reviw Button Clicked " + driver.getTitle());
 	}
 
 }
