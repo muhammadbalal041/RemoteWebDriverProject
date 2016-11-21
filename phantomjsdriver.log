@@ -1652,3 +1652,8 @@
   sendstat (http://www.rajasahib.com/skin/frontend/base/default/js/onepagecheckout.js.pagespeed.jm.NN773DaC0u.js:53)
   onload (http://www.rajasahib.com/skin/frontend/base/default/js/onepagecheckout.js.pagespeed.jm.NN773DaC0u.js:53)
 [INFO  - 2016-11-21T07:39:07.358Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-11-21T07:41:49.252Z] GhostDriver - Main - running on port 32443
+[INFO  - 2016-11-21T07:41:49.382Z] Session [f6177130-afbd-11e6-bbe5-57a54f26f73d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-11-21T07:41:49.382Z] Session [f6177130-afbd-11e6-bbe5-57a54f26f73d] - page.customHeaders:  - {}
+[INFO  - 2016-11-21T07:41:49.382Z] Session [f6177130-afbd-11e6-bbe5-57a54f26f73d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-11-21T07:41:49.382Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: f6177130-afbd-11e6-bbe5-57a54f26f73d
