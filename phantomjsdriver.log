@@ -1657,3 +1657,123 @@
 [INFO  - 2016-11-21T07:41:49.382Z] Session [f6177130-afbd-11e6-bbe5-57a54f26f73d] - page.customHeaders:  - {}
 [INFO  - 2016-11-21T07:41:49.382Z] Session [f6177130-afbd-11e6-bbe5-57a54f26f73d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-11-21T07:41:49.382Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: f6177130-afbd-11e6-bbe5-57a54f26f73d
+[INFO  - 2016-11-21T07:46:49.251Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T07:51:49.252Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T07:55:01.089Z] GhostDriver - Main - running on port 12044
+[INFO  - 2016-11-21T07:55:01.216Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-11-21T07:55:01.217Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.customHeaders:  - {}
+[INFO  - 2016-11-21T07:55:01.217Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-11-21T07:55:01.217Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: ce0fb8d0-afbf-11e6-b074-630ff5916729
+[ERROR - 2016-11-21T07:55:55.696Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - msg: ReferenceError: Can't find variable: spConfig
+[ERROR - 2016-11-21T07:55:55.696Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - stack:
+  (anonymous function) (undefined:28)
+  responder (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:519)
+  dispatchEvent (:0)
+  fire (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:544)
+  _methodized (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:60)
+  fireContentLoadedEvent (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:548)
+[ERROR - 2016-11-21T07:56:16.209Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - msg: ReferenceError: Can't find variable: mag_ver
+[ERROR - 2016-11-21T07:56:16.209Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - stack:
+  eval code (undefined:1)
+  eval (:0)
+  sendstat (http://www.houseofittehad.com/skin/frontend/base/default/js/onepagecheckout.js.pagespeed.jm.uEEhi_-_7h.js:54)
+  onload (http://www.houseofittehad.com/skin/frontend/base/default/js/onepagecheckout.js.pagespeed.jm.uEEhi_-_7h.js:54)
+[ERROR - 2016-11-21T07:56:16.949Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - msg: ReferenceError: Can't find variable: removeSpaces
+[ERROR - 2016-11-21T07:56:16.949Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - stack:
+  onblur (http://www.houseofittehad.com/pk/onepagecheckout/?___SID=U:426)
+  blur (:0)
+  lg (:122)
+  mg (:123)
+  (anonymous function) (:125)
+  t (:7)
+  $ (:125)
+  yg (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:133)
+[ERROR - 2016-11-21T07:56:17.119Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - msg: ReferenceError: Can't find variable: removeSpaces
+[ERROR - 2016-11-21T07:56:17.119Z] Session [ce0fb8d0-afbf-11e6-b074-630ff5916729] - page.onError - stack:
+  onblur (http://www.houseofittehad.com/pk/onepagecheckout/?___SID=U:434)
+  blur (:0)
+  lg (:122)
+  mg (:123)
+  (anonymous function) (:125)
+  t (:7)
+  $ (:125)
+  yg (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:133)
+[INFO  - 2016-11-21T07:56:27.394Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-11-21T07:56:49.251Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T07:58:51.903Z] GhostDriver - Main - running on port 7347
+[INFO  - 2016-11-21T07:58:52.017Z] Session [57a128e0-afc0-11e6-b17e-759c54835836] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-11-21T07:58:52.017Z] Session [57a128e0-afc0-11e6-b17e-759c54835836] - page.customHeaders:  - {}
+[INFO  - 2016-11-21T07:58:52.017Z] Session [57a128e0-afc0-11e6-b17e-759c54835836] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-11-21T07:58:52.017Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 57a128e0-afc0-11e6-b17e-759c54835836
+[INFO  - 2016-11-21T08:01:49.251Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2016-11-21T08:01:53.563Z] Session [57a128e0-afc0-11e6-b17e-759c54835836] - page.onError - msg: ReferenceError: Can't find variable: spConfig
+[ERROR - 2016-11-21T08:01:53.563Z] Session [57a128e0-afc0-11e6-b17e-759c54835836] - page.onError - stack:
+  (anonymous function) (undefined:28)
+  responder (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:519)
+  dispatchEvent (:0)
+  fire (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:544)
+  _methodized (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:60)
+  fireContentLoadedEvent (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:548)
+[INFO  - 2016-11-21T08:03:51.903Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T08:06:46.101Z] GhostDriver - Main - running on port 19874
+[INFO  - 2016-11-21T08:06:46.234Z] Session [7248c760-afc1-11e6-8c22-1ba4856d66d9] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-11-21T08:06:46.234Z] Session [7248c760-afc1-11e6-8c22-1ba4856d66d9] - page.customHeaders:  - {}
+[INFO  - 2016-11-21T08:06:46.234Z] Session [7248c760-afc1-11e6-8c22-1ba4856d66d9] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-11-21T08:06:46.234Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 7248c760-afc1-11e6-8c22-1ba4856d66d9
+[INFO  - 2016-11-21T08:06:49.252Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T08:08:51.903Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T08:11:46.104Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T08:11:49.252Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T08:13:51.905Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-11-21T08:13:55.543Z] GhostDriver - Main - running on port 4567
+[INFO  - 2016-11-21T08:13:55.666Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-11-21T08:13:55.666Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.customHeaders:  - {}
+[INFO  - 2016-11-21T08:13:55.666Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-11-21T08:13:55.666Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 723f0df0-afc2-11e6-b263-b92a5b3d2ff5
+[ERROR - 2016-11-21T08:14:16.677Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - msg: ReferenceError: Can't find variable: spConfig
+[ERROR - 2016-11-21T08:14:16.678Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - stack:
+  (anonymous function) (undefined:28)
+  responder (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:519)
+  dispatchEvent (:0)
+  fire (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:544)
+  _methodized (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:60)
+  fireContentLoadedEvent (http://www.houseofittehad.com/js/prototype/prototype.js.pagespeed.jm.ix8Kb1Gh8H.js:548)
+[ERROR - 2016-11-21T08:14:28.962Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - msg: ReferenceError: Can't find variable: mag_ver
+[ERROR - 2016-11-21T08:14:28.963Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - stack:
+  eval code (undefined:1)
+  eval (:0)
+  sendstat (http://www.houseofittehad.com/skin/frontend/base/default/js/onepagecheckout.js.pagespeed.jm.uEEhi_-_7h.js:54)
+  onload (http://www.houseofittehad.com/skin/frontend/base/default/js/onepagecheckout.js.pagespeed.jm.uEEhi_-_7h.js:54)
+[ERROR - 2016-11-21T08:14:29.710Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - msg: ReferenceError: Can't find variable: removeSpaces
+[ERROR - 2016-11-21T08:14:29.710Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - stack:
+  onblur (http://www.houseofittehad.com/pk/onepagecheckout/?___SID=U:426)
+  blur (:0)
+  lg (:122)
+  mg (:123)
+  (anonymous function) (:125)
+  t (:7)
+  $ (:125)
+  yg (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:133)
+[ERROR - 2016-11-21T08:14:29.870Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - msg: ReferenceError: Can't find variable: removeSpaces
+[ERROR - 2016-11-21T08:14:29.870Z] Session [723f0df0-afc2-11e6-b263-b92a5b3d2ff5] - page.onError - stack:
+  onblur (http://www.houseofittehad.com/pk/onepagecheckout/?___SID=U:434)
+  blur (:0)
+  lg (:122)
+  mg (:123)
+  (anonymous function) (:125)
+  t (:7)
+  $ (:125)
+  yg (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:132)
+  (anonymous function) (:133)
+[INFO  - 2016-11-21T08:14:35.293Z] ShutdownReqHand - _handle - About to shutdown
